@@ -20,4 +20,4 @@ data modify storage unif.logger:logs Logs append from storage unif.logger:cache 
 data modify storage unif.logger:warn_logs Logs append from storage unif.logger:cache Logger.Cache
 
 # 打印
-execute if score $level unif.logger matches 4.. run function unif.logger:private/logger/printer with storage unif.logger:warn_logs Logs[-1]
+execute as @a[tag=unif.debug] if score $level unif.logger matches ..4 run function unif.logger:private/logger/printer with storage unif.logger:warn_logs Logs[-1]
