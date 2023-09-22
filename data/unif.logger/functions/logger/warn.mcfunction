@@ -10,7 +10,6 @@ execute store result storage unif.logger:cache Logger.Cache.Day int 1 run time q
 
 data modify storage unif.logger:cache Logger.Cache.LevelColor set value "gold"
 data modify storage unif.logger:cache Logger.Cache.Level set value "WARN"
-data modify storage unif.logger:cache Logger.Cache.LevelInt set value 4
 
 # 数据处理
 function unif.logger:private/logger/cache_process
@@ -20,4 +19,4 @@ data modify storage unif.logger:logs Logs append from storage unif.logger:cache 
 data modify storage unif.logger:warn_logs Logs append from storage unif.logger:cache Logger.Cache
 
 # 打印
-execute as @a[tag=unif.debug] if score $level unif.logger matches ..4 run function unif.logger:private/logger/printer with storage unif.logger:warn_logs Logs[-1]
+execute as @a[tag=unif.debug] if score $level unif.logger matches ..3 run function unif.logger:private/logger/printer with storage unif.logger:warn_logs Logs[-1]
