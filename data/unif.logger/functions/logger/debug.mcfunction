@@ -19,4 +19,4 @@ function unif.logger:private/logger/cache_process
 data modify storage unif.logger:debug_logs Logs append from storage unif.logger:cache Logger.Cache
 
 # 打印
-execute as @a[tag=unif.debug] run function unif.logger:private/logger/printer with storage unif.logger:debug_logs Logs[-1]
+execute as @a[tag=unif.debug] if score $level unif.logger matches 2.. run function unif.logger:private/logger/printer with storage unif.logger:debug_logs Logs[-1]
