@@ -1,4 +1,5 @@
 function unif.logger:private/logger/_printer with storage unif.logger:cache Logs[0]
+function unif.logger:private/injected_logger/_injected_printer with storage unif.logger:cache Logs[0]
 
 data remove storage unif.logger:cache Logs[0]
 
