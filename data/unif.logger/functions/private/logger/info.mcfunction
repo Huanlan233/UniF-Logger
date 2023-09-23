@@ -12,11 +12,11 @@ data modify storage unif.logger:cache Logger.Cache.Level set value "INFO"
 data modify storage unif.logger:cache Logger.Cache.LevelColor set value "aqua"
 
 # 数据处理
-function unif.logger:private/logger/cache_process
+function unif.logger:private/cache/message_process
 
 # 写入游戏 Logs 内
 data modify storage unif.logger:logs Logs append from storage unif.logger:cache Logger.Cache
 data modify storage unif.logger:info_logs Logs append from storage unif.logger:cache Logger.Cache
 
 # 打印
-execute as @a[tag=unif.debug] if score $level unif.logger matches ..2 run function unif.logger:private/logger/injected_printer with storage unif.logger:info_logs Logs[-1]
+execute as @a[tag=unif.debug] if score $level unif.logger matches ..2 run function unif.logger:private/logger/_printer with storage unif.logger:info_logs Logs[-1]

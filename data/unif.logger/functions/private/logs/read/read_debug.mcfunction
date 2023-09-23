@@ -3,9 +3,9 @@ gamerule maxCommandChainLength 2147483647
 
 data remove storage unif.logger:cache Logs
 
-data modify storage unif.logger:cache Logs set from storage unif.logger:error_logs Logs
+data modify storage unif.logger:cache Logs set from storage unif.logger:debug_logs Logs
 
-function unif.logger:private/logger/reader
+function unif.logger:private/logs/read/_reader
 
 scoreboard objectives remove unif.10000
 gamerule maxCommandChainLength 65536
