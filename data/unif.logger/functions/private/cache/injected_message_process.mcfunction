@@ -1,8 +1,3 @@
-data remove storage unif.logger:cache Logger.Cache
-
-# Message
-$data modify storage unif.logger:cache Logger.Cache.Message set value "$(msg)"
-
 # Namespace
 $data modify storage unif.logger:cache Logger.Cache.Namespace set value $(namespace)
 
