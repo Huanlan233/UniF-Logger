@@ -18,4 +18,4 @@ function unif.logger:private/cache/message_process
 data modify storage unif.logger:debug_logs Logs append from storage unif.logger:cache Logger.Cache
 
 # 打印
-execute as @a[tag=unif.debug] if score $level unif.logger matches ..1 run function unif.logger:private/logger/_injected_printer with storage unif.logger:debug_logs Logs[-1]
+execute as @a[tag=unif.debug] if score $level unif.logger matches ..1 run function unif.logger:private/injected_logger/_injected_printer with storage unif.logger:debug_logs Logs[-1]
