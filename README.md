@@ -2,6 +2,10 @@
 
 ## Usage
 
+Before it, you must tag yourself `unif.debug`.
+
+### Logger
+
 UniF-Logger is a datapack to print logs.
 
 This is a simple example to print a info log.
