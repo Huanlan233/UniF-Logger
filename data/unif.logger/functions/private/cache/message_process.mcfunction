@@ -18,6 +18,6 @@ execute store result storage unif.logger:cache Cache.Logger.Day int 1 run time q
 
 # 对过大数据进行处理
 data modify storage unif.logger:cache Cache.Logger.Namespace set string storage unif.logger:cache Cache.Logger.Namespace 0 64
-data modify storage unif.logger:cache Cache.Logger.Message set string storage unif.logger:cache Cache.Logger.Message 0 256
+data modify storage unif.logger:cache Cache.Logger.Message set string storage unif.logger:cache Cache.Logger.Message 0 512
 
 scoreboard objectives remove unif.10000
