@@ -4,6 +4,15 @@
 
 Before it, you must tag yourself `unif.debug`.
 
+And following is a log example.
+```TXT
+[0:1000] [INFO] (NAMESPACE) MESSAGE
+```
+
+- `[0:1000]` is the time of the game. It means that the log was printed at the time of 1000 on day 1 of the game.
+- `[INFO]` is the level of the log.
+- `(Namespace)` is the namespace of the logger.
+
 ### Logger
 
 UniF-Logger is a datapack to print logs.
