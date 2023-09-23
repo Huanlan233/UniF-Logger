@@ -10,12 +10,16 @@ And following is a log example.
 ```
 
 - `[0:1000]` is the time of the game. It means that the log was printed at the time of 1000 on day 1 of the game.
-- `[INFO]` is the level of the log.
+- `[INFO]` is the level of the log. There are a total of 5 levels, ALL < DEBUG < INFO < WARN < ERROR.
 - `(Namespace)` is the namespace of the logger.
 
-### Logger
+After logging but logging of DEBUG, all logging will record into stoarge `unif.logger:logs`,
+and there are also 4 stoarges: `unif.logger:debug_logs`, `unif.logger:info_logs`, `unif.logger:warn_logs`,
+`unif.logger:error_logs`.
 
-UniF-Logger is a datapack to print logs.
+When the logs is going to be too big, it will auto delete the last log in logs.
+
+### Logger
 
 This is a simple example to print a info log.
 
@@ -44,3 +48,28 @@ function #unif.logger:injected_logger/v1/info {"msg":"{\"text\":\"Injected Info 
 ```
 
 ![](https://z1.ax1x.com/2023/09/22/pPoH0YV.png)
+
+### Logs
+
+#### Read logs
+You can use the following functions to read logs in the past.
+
+```MCFUNCTION
+function #unif.logger:logs/v1/read_all
+function #unif.logger:logs/v1/read_debug
+function #unif.logger:logs/v1/read_info
+function #unif.logger:logs/v1/read_warn
+function #unif.logger:logs/v1/read_error
+```
+
+#### Clear logs
+
+You can use the following functions to clear logs.
+
+```MCFUNCTION
+function #unif.logger:logs/v1/clear_all
+function #unif.logger:logs/v1/clear_debug
+function #unif.logger:logs/v1/clear_info
+function #unif.logger:logs/v1/clear_warn
+function #unif.logger:logs/v1/clear_error
+```
